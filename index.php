@@ -1,4 +1,4 @@
 <?php
 header("Content-Type:application/json");
-require_once('functions.php');
-init();
+require_once('controller.php');
+Controller::init();
