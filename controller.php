@@ -5,19 +5,16 @@ class Controller {
 	public static function init(){
 
 		if(!empty($_GET['name'])){
+			
 			$name = $_GET['name'];
 			$price = Controller::getPrice($name);
 
-			// Display Price Responce
-			if(!empty($price)){
-				Controller::responce(200, "Book Found" , $price);
-			} else {
-				Controller::responce(200, "Book Not Found" , null);
-			}
+			// Price Responce 
+			!empty($price) ? Controller::responce(200, "Book Found" , $price) : Controller::responce(200, "Book Not Found" , null);
 
 		} else {
 			// Invalid Responce
-			Controller::responce(400, "invalid responce" , null);
+			Controller::responce(400, "Invalid Responce" , null);
 		}
 		
 	}
@@ -49,11 +46,12 @@ class Controller {
 
 		header("HTTP/1.1 $status $status_message");
 
-		$responce['version'] = "1";
-		$responce['status'] = $status;
-		$responce['status_message'] = $status_message;
-		$responce['data'] = $data;
-
+		$responce = array(
+			'version' => "1",
+			'status' => $status,
+			'status_message' => $status_message,
+			'data' => $data
+		);
 		echo json_encode($responce);
 
 	}
