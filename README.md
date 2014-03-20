@@ -8,12 +8,12 @@ URL: http://api.test.local/{bookNameHere}
 
 ## Responce Example
 
-{
-	version: "1",
-	status: 200,
-	status_message: "Book Found",
-	data: {
-		price: 267,
-		foo: "bar"
+	{
+		version: "1",
+		status: 200,
+		status_message: "Book Found",
+		data: {
+			price: 267,
+			foo: "bar"
+		}
 	}
-}
