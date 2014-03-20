@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+
+    # Turn on the rewrite engine
+    Options +FollowSymlinks
+    RewriteEngine on
+
+    # Redirect /index.php to / (optional)
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.php
+    RewriteRule ^index.php/?(.*)$ $1 [R=301,L]
+
+    # Request Routing
+    RewriteRule ^(.*)$ index.php?name=$1 [nc,qsa]
+    
+</IfModule>
