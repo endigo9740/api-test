@@ -4,16 +4,16 @@ Playing around with buiding my own custom RESTful API in PHP.
 
 ## Instructions
 
-URL: http://api.test.local/{bookNameHere}
+http://api.test.local/{marketName}
 
 ## Responce Example
 
 	{
-		version: "1",
+		api_version: 1,
 		status: 200,
-		status_message: "Book Found",
+		status_message: "Offer Found",
 		data: {
-			price: 267,
-			foo: "bar"
+			dataPoint: "foo",
+			dataPoint2: "bar"
 		}
 	}
