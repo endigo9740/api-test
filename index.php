@@ -1,7 +1,7 @@
 <?php error_reporting(0); ini_set('display_errors', 0); // Error Reporting
 
 define('API_VERSION', 1);
-define('API_NAME', 'Jiffy Lube Marketing API');
+define('API_NAME', 'API Test');
 
 define('DS', '/');
 define('BASE_ROOT', __DIR__ . DS);
