@@ -29,3 +29,5 @@ class ENVR {
 		return $envr;
 	}
 }
+
+define ('ENVR', ENVR::setEnvironment()); # Initialize + Define
