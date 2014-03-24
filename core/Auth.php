@@ -3,7 +3,7 @@
 class Auth {
 
 	private static $serverPublicKey = "123456";
-	private static $serverPrivateKey = "7c3ab1490896995ea69705f5e83651129e752671f78199d294241328a4f078e4";
+	private static $serverPrivateKey = "098765";
 	private static $postData, $clientHash, $clientPublicKey, $clientDataRequest, $clientTimestamp;
 
 	function __construct($postData){
@@ -18,7 +18,7 @@ class Auth {
 		return gmdate('m.d.Y'); // -H:i
 	}
 
-	private static function generateServerHash(){
+	public static function generateServerHash(){
 		return hash_hmac('sha256', self::$serverPrivateKey, self::$serverPublicKey . self::$clientDataRequest . self::serverTimestamp() );
 	}
 
@@ -40,16 +40,16 @@ class Auth {
 			if(self::validateTimestamp() == true){
 				if(self::validateHash() == true){
 					return 'valid';
-				} else { return "Error: Hash"; }
-			} else { return "Error: Timestamp"; }
-		} else { return "Error: Public Key"; }
+				} else { return "Error: Hash Invalid"; }
+			} else { return "Error: Timestamp Invalid"; }
+		} else { return "Error: Public Key Invalid"; }
 	}
 
 }
 
 $postData = array(
 	'publicKey' => '123456',
-	'hash' => 'f9c088a9491157c5ecc521ce0456995b1452f390e0f51a3bdeaa4d5821b56e9b',
+	'hash' => 'a3021efe69bd527e284be4273938af0077e56e2b3da103b87b80c0ddadcf3ee5',
 	'dataRequest' => '?foo=bar&blah=stuff',
 	'timestamp' => '03.24.2014'
 );
