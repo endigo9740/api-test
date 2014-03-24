@@ -18,10 +18,10 @@ class Controller {
 		
 	}
 
-	// NOTE: MOVE TO MODEL (queries)
 	public function getOfferData($find = null){
 		
 		// *** REMOVE ***
+		// NOTE: MOVE TO MODEL (queries)
 		$offer = array("dallas" => 299, "chicago" => 348, "blah" => array("dataPoint" => 'foo', "dataPoint2" => "bar"));
 		// *** /REMOVE ***
 
