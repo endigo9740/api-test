@@ -39,10 +39,16 @@ class Controller {
 
 		$responce = array(
 			'api_version' => API_VERSION,
-			'environment' => ENVR,
 			'status' => $status,
 			'status_message' => $status_message,
-			'data' => $data
+			'data' => $data,
+			'dev_only' => array(
+				'environment' => ENVR,
+				'DB_NAME' => DB_NAME,
+				'DB_HOST' => DB_HOST,
+				'DB_USER' => DB_USER,
+				'DB_PASS' => DB_PASS
+			)
 		);
 		echo json_encode($responce);
 

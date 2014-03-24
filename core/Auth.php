@@ -18,7 +18,7 @@ class Auth {
 		return gmdate('m.d.Y'); // -H:i
 	}
 
-	public static function generateServerHash(){
+	private static function generateServerHash(){
 		return hash_hmac('sha256', self::$serverPrivateKey, self::$serverPublicKey . self::$clientDataRequest . self::serverTimestamp() );
 	}
 
