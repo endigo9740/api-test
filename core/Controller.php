@@ -2,6 +2,7 @@
 
 class Controller {
 
+	// NOTE: MOVE THIS TO ROUTER
 	public function init(){
 
 		$name = $_GET['name'];
@@ -17,7 +18,7 @@ class Controller {
 		
 	}
 
-	// Lookup Offer Price
+	// NOTE: MOVE TO MODEL (queries)
 	public function getOfferData($find = null){
 		
 		// *** REMOVE ***
@@ -31,13 +32,14 @@ class Controller {
 
 	}
 
-	// Display View Responce (json)
+	// NOTE: MOVE TO RESPONCE CLASS
 	public function responce($status = '200', $status_message = 'Default Mesage', $data = null){
 
 		header("HTTP/1.1 $status $status_message");
 
 		$responce = array(
 			'api_version' => API_VERSION,
+			'environment' => ENVR,
 			'status' => $status,
 			'status_message' => $status_message,
 			'data' => $data

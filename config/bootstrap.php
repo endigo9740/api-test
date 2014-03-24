@@ -1,7 +1,7 @@
 <?php // Boostrap
 
 // Config Files
-// require_once(BASE_ROOT . 'config' . DS . 'db_config.php');
+require_once(BASE_ROOT . 'config' . DS . 'envr.php');
 
 // Core Files
 // require_once(BASE_ROOT . 'core' . DS . 'Auth.php');

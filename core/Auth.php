@@ -1,4 +1,4 @@
-<?php // Authentication
+<?php // Authentication - Base on: http://www.thebuzzmedia.com/designing-a-secure-rest-api-without-oauth-authentication/
 
 class Auth {
 
@@ -7,10 +7,10 @@ class Auth {
 	private static $postData, $clientHash, $clientPublicKey, $clientDataRequest, $clientTimestamp;
 
 	function __construct($postData){
+		self::$clientPublicKey = $postData['publicKey'];
 		self::$clientHash = $postData['hash'];
-			self::$clientPublicKey = $postData['publicKey'];
-			self::$clientDataRequest = $postData['dataRequest'];
-			self::$clientTimestamp = $postData['timestamp'];		
+		self::$clientDataRequest = $postData['dataRequest'];
+		self::$clientTimestamp = $postData['timestamp'];		
 	}
 
 	private static function serverTimestamp(){
