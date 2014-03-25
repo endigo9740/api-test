@@ -9,7 +9,7 @@ class DB_Config {
 
 	public static function setConfiguration() {
 		if(self::$environment == 'LOCAL') {
-			self::$db_name = strtolower(str_replace(' ',API_NAME,'_')) . '_main';
+			self::$db_name = strtolower(str_replace(' ',API_NAME,'_')) . '_local'; // _main
 			self::$db_user = 'root';
 			self::$db_pass = 'root';
 			self::$db_host = '127.0.0.1';

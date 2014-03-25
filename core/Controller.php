@@ -1,8 +1,13 @@
 <?php // Controller
 
+// ********************
+// *
+// THIS FILE IS DEPRECIATED (remove asap)
+// *
+// ********************
+
 class Controller {
 
-	// NOTE: MOVE THIS TO ROUTER
 	public function init(){
 
 		$name = $_GET['name'];
@@ -21,7 +26,6 @@ class Controller {
 	public function getOfferData($find = null){
 		
 		// *** REMOVE ***
-		// NOTE: MOVE TO MODEL (queries)
 		$offer = array("dallas" => 299, "chicago" => 348, "blah" => array("dataPoint" => 'foo', "dataPoint2" => "bar"));
 		// *** /REMOVE ***
 
@@ -32,7 +36,7 @@ class Controller {
 
 	}
 
-	// NOTE: MOVE TO RESPONCE CLASS
+	// NOTE: MOVE TO RESPONCE
 	public function responce($status = '200', $status_message = 'Default Mesage', $data = null){
 
 		header("HTTP/1.1 $status $status_message");

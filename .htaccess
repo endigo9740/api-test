@@ -1,14 +1,19 @@
 <IfModule mod_rewrite.c>
 
-    # Turn on the rewrite engine
+    # # Turn on the rewrite engine
     Options +FollowSymlinks
     RewriteEngine on
 
-    # Redirect /index.php to / (optional)
+    # # Redirect /index.php to / (optional)
     RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.php
     RewriteRule ^index.php/?(.*)$ $1 [R=301,L]
 
-    # Request Routing
-    RewriteRule ^(.*)$ index.php?name=$1 [nc,qsa]
+    # # Request Routing
+    # RewriteRule ^(.*)$ index.php?name=$1 [nc,qsa]
+
+    # Run everything else but real files through index.php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php/$1?%{QUERY_STRING} [L]
     
 </IfModule>
